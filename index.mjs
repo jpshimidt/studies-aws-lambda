@@ -1,6 +1,6 @@
 export const handler = async (event) => {
-  console.log('Teste utilizando o GitHub Actions');
-  
+  console.log(process.env._MINHA_VAR);
+
   const response = {
     statusCode: 200,
     body: JSON.stringify(event),
