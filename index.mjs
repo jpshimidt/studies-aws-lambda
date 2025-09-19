@@ -1,10 +1,11 @@
 export const handler = async (event) => {
-  console.log(process.env._MINHA_VAR);
+  console.log("event: ", JSON.stringify(event));
 
-  const response = {
+  return {
     statusCode: 200,
-    body: JSON.stringify(event),
+    body: `<html><body> Dados da requisicao ${JSON.stringify(event)}</body></html>`,
+    headers: {
+      "content-type": "text/html"
+    }
   };
-  console.log("event: ", event);
-  return response;
 };
