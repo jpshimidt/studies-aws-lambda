@@ -3,9 +3,25 @@ export const handler = async (event) => {
 
   return {
     statusCode: 200,
-    body: `<html><body> Dados da requisicao ${JSON.stringify(event)}</body></html>`,
+    body: page,
     headers: {
       "content-type": "text/html"
     }
   };
 };
+
+const page = `<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mensagem Lambda</title>
+  </head>
+  <body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
+    <div style="text-align:center;padding:40px;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.45);background:rgba(255,255,255,0.05);backdrop-filter:blur(6px);">
+      <h1 style="margin:0;font-size:clamp(24px,6vw,56px);color:#ffffff;letter-spacing:1px;">
+        TOP!! TU DEU UMA LAMBDA LEGAL
+      </h1>
+    </div>
+  </body>
+</html>`;
